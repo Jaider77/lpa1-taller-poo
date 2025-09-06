@@ -26,24 +26,44 @@ class Asiento:
     
     def __init__(self, nombre: str, material: str, color: str, precio_base: float,
                  capacidad_personas: int, tiene_respaldo: bool, material_tapizado: str = None):
+        # Llamar al constructor de la clase padre usando super()
         super().__init__(nombre, material, color, precio_base)
         self._capacidad_personas = capacidad_personas
         self._tiene_respaldo = tiene_respaldo
         self._material_tapizado = material_tapizado
-        """
-        Constructor para muebles de asiento.
-        
-        Args:
-            capacidad_personas: Número de personas que pueden sentarse
-            tiene_respaldo: Si el asiento tiene respaldo o no
-            material_tapizado: Material del tapizado (opcional)
-            Otros argumentos heredados de Mueble
-        """
-        # TODO: Llamar al constructor de la clase padre usando super()
-        
+
         # TODO: Inicializar los atributos específicos de asiento
         # Usar encapsulación con atributos privados
-        pass
+    @property
+    def capacidad_personas(self) -> int:
+        """Getter para la capacidad de personas."""
+        return self._capacidad_personas
+    @capacidad_personas.setter
+    def capacidad_personas(self, value: int) -> None:
+        """Setter para capacidad con validación."""
+        if value <= 0:
+            raise ValueError("La capacidad debe ser mayor a 0")
+        self._capacidad_personas = value
+    @property
+    def tiene_respaldo(self) -> bool:
+        """Getter para si tiene respaldo."""
+        return self._tiene_respaldo
+    
+    @tiene_respaldo.setter
+    def tiene_respaldo(self, value: bool) -> None:
+        """Setter para tiene_respaldo con validación."""
+        self._tiene_respaldo = bool (value)
+
+    @property
+    def material_tapizado(self) -> str:
+        """Getter para el material del tapizado."""
+        return self._material_tapizado
+    
+    @material_tapizado.setter
+    def material_tapizado(self, value: str) -> None:
+        """Setter para material_tapizado con validación."""
+        self._material_tapizado = value
+
     
     # TODO: Implementar propiedades (getters) para los nuevos atributos
     # @property
