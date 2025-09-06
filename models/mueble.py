@@ -3,7 +3,8 @@ Clase base abstracta Mueble
 Este es el punto de partida de nuestra jerarquía de clases.
 """
 from abc import ABC, abstractmethod
-class Mueble(ABC):
+from models.mueble import Mueble
+class Asiento(Mueble, ABC):
 
      
     def __init__(self, nombre: str, material: str, color: str, precio_base: float):
