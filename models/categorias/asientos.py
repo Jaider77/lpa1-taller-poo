@@ -91,7 +91,6 @@ class Asiento:
         if self.capacidad_personas > 1:
             factor += 0.05 * (self.capacidad_personas - 1)
         return factor
-        return factor
     
     def obtener_info_asiento(self) -> str:
         info = f"Capacidad: {self.capacidad_personas} personas"
