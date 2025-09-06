@@ -3,10 +3,6 @@ Clase base abstracta Mueble
 Este es el punto de partida de nuestra jerarquía de clases.
 """
 from abc import ABC, abstractmethod
-# TODO: Importar ABC y abstractmethod del módulo abc
-# Estos son necesarios para crear clases y métodos abstractos
-
-
 class Mueble:
     """
     Clase abstracta base para todos los muebles.
@@ -20,6 +16,10 @@ class Mueble:
     """
     
     def __init__(self, nombre: str, material: str, color: str, precio_base: float):
+        self._nombre = nombre
+        self._material = material
+        self._color = color
+        self._precio_base = precio_base
         """
         Constructor de la clase Mueble.
         
@@ -33,7 +33,17 @@ class Mueble:
         # Ejemplo: self._nombre = nombre
         # Esto implementa encapsulación, ocultando los datos internos
         pass
-    
+    @property
+    def nombre(self) -> str:
+        """Getter para el nombre del mueble."""
+        return self._nombre
+    @nombre.setter
+    def nombre(self, value: str) -> None:
+        """Setter para el nombre con validación."""
+        if not value or not value.strip():
+            raise ValueError("El nombre no puede estar vacío")
+        self._nombre = value.strip()
+
     # TODO: Implementar las propiedades (getters) para cada atributo
     # Usa el decorador @property para crear getters
     # Ejemplo:
