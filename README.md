@@ -3,7 +3,8 @@
 Este taller está diseñado para introducir a los estudiantes en los conceptos de la Programación Orientada a Objetos (OOP) utilizando Python. Construiremos una tienda de muebles que implementa una jerarquía de clases aplicando los conceptos vistos en clase.
 
 ## Estudiante
-
+Jaider afrancisco Asprilla Ryes 
+CC: 1077631902
 Cuenta: [https://github.com/Jaider77]
 
 ## Objetivos

@@ -2,7 +2,7 @@
 Clase base abstracta Mueble
 Este es el punto de partida de nuestra jerarquía de clases.
 """
-
+from abc import ABC, abstractmethod
 # TODO: Importar ABC y abstractmethod del módulo abc
 # Estos son necesarios para crear clases y métodos abstractos
 
