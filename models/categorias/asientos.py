@@ -8,7 +8,7 @@ from models.mueble import Mueble
 # Importar la clase padre Mueble
 # from ..mueble import Mueble
 
-# TODO: Importar ABC y abstractmethod si es necesario
+# Importar ABC y abstractmethod si es necesario
 
 
 class Asiento:
@@ -32,7 +32,7 @@ class Asiento:
         self._tiene_respaldo = tiene_respaldo
         self._material_tapizado = material_tapizado
 
-        # TODO: Inicializar los atributos específicos de asiento
+        # Inicializar los atributos específicos de asiento
         # Usar encapsulación con atributos privados
     @property
     def capacidad_personas(self) -> int:
@@ -65,13 +65,13 @@ class Asiento:
         self._material_tapizado = value
 
     
-    # TODO: Implementar propiedades (getters) para los nuevos atributos
+    # Implementar propiedades (getters) para los nuevos atributos
     # @property
     # def capacidad_personas(self) -> int:
     #     """Getter para la capacidad de personas."""
     #     return self._capacidad_personas
     
-    # TODO: Implementar setters con validaciones apropiadas
+    # Implementar setters con validaciones apropiadas
     # @capacidad_personas.setter
     # def capacidad_personas(self, value: int) -> None:
     #     """Setter para capacidad con validación."""
@@ -80,6 +80,18 @@ class Asiento:
     #     self._capacidad_personas = value
     
     def calcular_factor_comodidad(self) -> float:
+        factor = 1.0
+        if self.tiene_respaldo:
+            factor += 0.1
+        if self.material_tapizado:
+            if self.material_tapizado.lower() == "cuero":
+                factor += 0.2
+            elif self.material_tapizado.lower() == "tela":
+                factor += 0.1
+        if self.capacidad_personas > 1:
+            factor += 0.05 * (self.capacidad_personas - 1)
+        return factor
+    
         """
         Calcula un factor de comodidad basado en las características del asiento.
         Este es un método concreto que pueden usar las clases hijas.
