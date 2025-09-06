@@ -100,24 +100,16 @@ class Asiento:
             info += f", Tapizado: {self.material_tapizado}"
         return info
     
-        """
-        Obtiene información específica del asiento.
-        Método concreto auxiliar para las clases hijas.
-        
-        Returns:
-            str: Información detallada del asiento
-        """
-        # TODO: Implementar retornando información del asiento
-        # info = f"Capacidad: {self.capacidad_personas} personas"
-        # info += f", Respaldo: {'Sí' if self.tiene_respaldo else 'No'}"
-        # if self.material_tapizado:
-        #     info += f", Tapizado: {self.material_tapizado}"
-        # return info
+    # Mantener el método calcular_precio como abstracto
+    # Las clases concretas deben implementar su propio cálcul
+
+    @abstractmethod
+    def calcular_precio(self) -> float:
         pass
     
-    # TODO: Mantener el método calcular_precio como abstracto
-    # Las clases concretas deben implementar su propio cálculo
-    
-    # TODO: Mantener el método obtener_descripcion como abstracto
+    # Mantener el método obtener_descripcion como abstracto
     # Cada tipo de asiento tendrá su propia descripción
+    @abstractmethod
+    def obtener_descripcion(self) -> str:
+        pass
 
