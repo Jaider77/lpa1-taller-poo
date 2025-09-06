@@ -26,6 +26,10 @@ class Asiento:
     
     def __init__(self, nombre: str, material: str, color: str, precio_base: float,
                  capacidad_personas: int, tiene_respaldo: bool, material_tapizado: str = None):
+        super().__init__(nombre, material, color, precio_base)
+        self._capacidad_personas = capacidad_personas
+        self._tiene_respaldo = tiene_respaldo
+        self._material_tapizado = material_tapizado
         """
         Constructor para muebles de asiento.
         
