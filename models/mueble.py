@@ -4,7 +4,7 @@ Este es el punto de partida de nuestra jerarquía de clases.
 """
 from abc import ABC, abstractmethod
 from models.mueble import Mueble
-class Asiento(Mueble, ABC):
+class Mueble (ABC):
 
      
     def __init__(self, nombre: str, material: str, color: str, precio_base: float):

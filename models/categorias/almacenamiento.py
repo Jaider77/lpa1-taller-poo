@@ -5,11 +5,11 @@ from abc import ABC, abstractmethod
 from models.mueble import Mueble
 
 class Almacenamiento(Mueble, ABC):
-    def __init__(self, material: str, color: str, alto: float, ancho: float, profundo: float):
-        super().__init__(material, color, alto, ancho, profundo)
+    def __init__(self, nombre: str, material: str, color: str, precio_base: float, puertas: int, cajones: int):
+        super().__init__(nombre, material, color, precio_base)
         self._puertas = puertas
         self._cajones = cajones
-    
+ 
     @property
     def puertas(self):
         return self._puertas

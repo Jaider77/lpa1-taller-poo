@@ -11,7 +11,7 @@ from models.mueble import Mueble
 # Importar ABC y abstractmethod si es necesario
 
 
-class Asiento:
+class Asiento(Mueble, ABC):
     """
     Clase abstracta para todos los muebles donde las personas se sientan.
     
